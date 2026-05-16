@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 30% 97%;
+    --foreground: 140 25% 15%;
+
+    --card: 45 25% 99%;
+    --card-foreground: 140 25% 15%;
+
+    --popover: 45 25% 99%;
+    --popover-foreground: 140 25% 15%;
+
+    --primary: 130 45% 25%;
+    --primary-foreground: 45 30% 97%;
+
+    --secondary: 95 25% 75%;
+    --secondary-foreground: 130 45% 20%;
+
+    --muted: 95 15% 92%;
+    --muted-foreground: 140 10% 45%;
+
+    --accent: 25 65% 52%;
+    --accent-foreground: 45 30% 97%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 45 30% 97%;
+
+    --border: 95 20% 88%;
+    --input: 95 20% 88%;
+    --ring: 130 45% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors for agriculture theme */
+    --forest: 130 45% 25%;
+    --forest-light: 130 40% 35%;
+    --sage: 100 25% 55%;
+    --sage-light: 100 30% 75%;
+    --terracotta: 25 65% 52%;
+    --terracotta-light: 25 55% 65%;
+    --earth: 35 40% 35%;
+    --cream: 45 30% 97%;
+    --gold: 45 80% 55%;
+    --sky: 200 75% 55%;
+    --rain: 210 65% 50%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(130 45% 25%) 0%, hsl(160 40% 30%) 50%, hsl(100 25% 55%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(45 25% 99%) 0%, hsl(95 15% 96%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(25 65% 52%) 0%, hsl(35 70% 55%) 100%);
+    --gradient-sky: linear-gradient(180deg, hsl(200 75% 55%) 0%, hsl(210 65% 50%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(140 25% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(140 25% 15% / 0.08), 0 2px 4px -2px hsl(140 25% 15% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(140 25% 15% / 0.1), 0 4px 6px -4px hsl(140 25% 15% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(140 25% 15% / 0.1), 0 8px 10px -6px hsl(140 25% 15% / 0.05);
+    --shadow-glow: 0 0 40px hsl(130 45% 25% / 0.15);
+
+    --sidebar-background: 45 25% 99%;
+    --sidebar-foreground: 140 25% 15%;
+    --sidebar-primary: 130 45% 25%;
+    --sidebar-primary-foreground: 45 30% 97%;
+    --sidebar-accent: 95 15% 92%;
+    --sidebar-accent-foreground: 130 45% 20%;
+    --sidebar-border: 95 20% 88%;
+    --sidebar-ring: 130 45% 25%;
+  }
+
+  .dark {
+    --background: 140 20% 8%;
+    --foreground: 45 25% 95%;
+
+    --card: 140 18% 12%;
+    --card-foreground: 45 25% 95%;
+
+    --popover: 140 18% 12%;
+    --popover-foreground: 45 25% 95%;
+
+    --primary: 120 40% 50%;
+    --primary-foreground: 140 20% 8%;
+
+    --secondary: 140 15% 20%;
+    --secondary-foreground: 45 25% 90%;
+
+    --muted: 140 15% 18%;
+    --muted-foreground: 95 10% 60%;
+
+    --accent: 25 60% 55%;
+    --accent-foreground: 45 30% 97%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 45 30% 97%;
+
+    --border: 140 15% 22%;
+    --input: 140 15% 22%;
+    --ring: 120 40% 50%;
+
+    --forest: 120 40% 50%;
+    --forest-light: 120 35% 60%;
+    --sage: 100 20% 45%;
+    --sage-light: 100 25% 55%;
+    --terracotta: 25 60% 55%;
+    --terracotta-light: 25 50% 65%;
+    --earth: 35 35% 45%;
+    --cream: 45 20% 15%;
+    --gold: 45 75% 50%;
+    --sky: 200 70% 50%;
+    --rain: 210 60% 45%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(140 20% 8%) 0%, hsl(130 25% 15%) 50%, hsl(120 35% 25%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(140 18% 12%) 0%, hsl(140 15% 15%) 100%);
+
+    --sidebar-background: 140 18% 10%;
+    --sidebar-foreground: 45 25% 95%;
+    --sidebar-primary: 120 40% 50%;
+    --sidebar-primary-foreground: 140 20% 8%;
+    --sidebar-accent: 140 15% 18%;
+    --sidebar-accent-foreground: 45 25% 90%;
+    --sidebar-border: 140 15% 22%;
+    --sidebar-ring: 120 40% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-hero {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .bg-gradient-sky {
+    background: var(--gradient-sky);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glass {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
